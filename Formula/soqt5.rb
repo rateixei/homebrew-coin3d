@@ -3,8 +3,6 @@ class Soqt5 < Formula
   homepage "qat.pitt.edu"
 
   # SOURCES
-  # url "http://atlas-vp1.web.cern.ch/atlas-vp1/sources/soqt5-1.2.1.zip"
-  # sha256 "e9caa7ec9871b9c2c3d05dc8ce44145f0fc8f93910b37251bd980104d2b03cb4"
   url "http://atlas-vp1.web.cern.ch/atlas-vp1/sources/soqt5-1.2.2.zip"
   sha256 "7e35ee9ede8100f83e268e11ead719baf9da129d4f2e67a2db5eb16aa47697bd"
 
