@@ -3,8 +3,10 @@ class Soqt5 < Formula
   homepage "qat.pitt.edu"
 
   # SOURCES
-  url "http://atlas-vp1.web.cern.ch/atlas-vp1/sources/soqt5-1.2.1.zip"
-  sha256 "e9caa7ec9871b9c2c3d05dc8ce44145f0fc8f93910b37251bd980104d2b03cb4"
+  # url "http://atlas-vp1.web.cern.ch/atlas-vp1/sources/soqt5-1.2.1.zip"
+  # sha256 "e9caa7ec9871b9c2c3d05dc8ce44145f0fc8f93910b37251bd980104d2b03cb4"
+  url "http://atlas-vp1.web.cern.ch/atlas-vp1/sources/soqt5-1.2.2.zip"
+  sha256 "7e35ee9ede8100f83e268e11ead719baf9da129d4f2e67a2db5eb16aa47697bd"
 
   # DEPENDENCIES
   depends_on "qt5"
@@ -21,7 +23,7 @@ class Soqt5 < Formula
   bottle do
     root_url "http://atlas-vp1.web.cern.ch/atlas-vp1/sources/bottles"
     cellar :any
-    sha256 "75fffd9bad18f19cc58edea1bbd0b65a74cb2314a770b2f72fb2d26da5dcd632" => :mojave
+    sha256 "10055e40d2b89c69fd7fe38a5f669a49115abee9fa0789e1b81fa5861e737d5b" => :mojave
   end
 
 end
