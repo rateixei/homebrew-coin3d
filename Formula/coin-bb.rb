@@ -1,32 +1,31 @@
 class CoinBb < Formula
-  desc "The Coin implemention of the Open Inventor Toolkit"
-  homepage "https://bitbucket.org/Coin3D"
+  desc "The SoQt package, allowing Coin to be used with Qt"
+  homepage "https://bitbucket.org/Coin3D/coin"
 
-  url "https://qat.pitt.edu/coin-bb-1.0.tar.gz"
-  sha256 "e153260c99101beebc0acf33536f31501dfaf1e065bf3b0d8f69a7cc4a5d4747"
+  # SOURCES  
+  url "https://bitbucket.org/Coin3D/coin/downloads/coin-4.0.0-src.zip"
+  sha256 "d4911625e585a3da21428d1207ae81625ba792591fe0b609ad46766b954ad516"
+  
+  head "https://bitbucket.org/Coin3D/coin",
+      :using    => :hg
 
+  # DEPENDENCIES
   depends_on "cmake" => :build
-  depends_on "doxygen" => :build
 
-  option "with-debug", "Build with debug symbols ('DCMAKE_BUILD_TYPE=Debug')"
-
+  # BUILD INSTRUCTIONS
   def install
-    extra_args = %W[]
-    if build.with? "debug"
-        extra_args << "-DCMAKE_BUILD_TYPE=Debug"
-    end
     mkdir "builddir" do
-      system "cmake", "..", "-DCMAKE_CXX_FLAGS=-std=c++14", *extra_args, *std_cmake_args
-      system "make",      "install"
+      system "cmake", "..", *std_cmake_args
+      system "make"
+      system "make", "install"
     end
   end
 
+  # PRE-COMPILED PACKAGES
   bottle do
-    root_url "https://qat.pitt.edu/Bottles"
+    root_url "http://atlas-vp1.web.cern.ch/atlas-vp1/sources/bottles"
     cellar :any
-    sha256 "b418e0593be09c6a9bcbe1ddd924f318870f1fd6f2303f32481ef2d322ce9087" => :high_sierra
-    rebuild 1
-    sha256 "4fcfebd03208cfe804bf3b2ae2a7a41c729d6f9af82f786d8b4fb687c561e1bc" => :mojave
+    sha256 "8fffc573cf7b2f893cbd751ec41803587f87fab6435e7d29c67f8057d0d142b9" => :mojave
   end
 
 end
